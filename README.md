@@ -4,18 +4,17 @@ unless you send your code to the threadpool which i say you should otherwise itl
 trying to run your code in one thread
 
 like for example in your dll itll be like 
-""
-  HMODULE hSelf = GetModuleHandleA(NULL);
+
   
-  PTP_WORK work = CreateThreadpoolWork(InitWork, hSelf, NULL);
-  
-  if (work) {
-  
-      SubmitThreadpoolWork(work);
+      HMODULE hSelf = GetModuleHandleA(NULL);
+      PTP_WORK work = CreateThreadpoolWork(InitWork, hSelf, NULL);
+
+      if (work)
+      {
+        SubmitThreadpoolWork(work);
+        CloseThreadpoolWork(work);
+      }
+    
       
-      CloseThreadpoolWork(work);
-      
-  }
-  
-""
+
   
