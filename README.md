@@ -7,6 +7,7 @@ like for example in your dll itll be like
 
   
       HMODULE hSelf = GetModuleHandleA(NULL);
+      // init work would be where you code goes, or what function you want to run
       PTP_WORK work = CreateThreadpoolWork(InitWork, hSelf, NULL);
 
       if (work)
